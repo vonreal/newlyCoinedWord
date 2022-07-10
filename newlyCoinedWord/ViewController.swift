@@ -15,6 +15,9 @@ class ViewController: UIViewController {
     
     @IBOutlet var keywordButtons: [UIButton]!
     
+    @IBOutlet weak var keywordButton1: UIButton!
+    
+    
     @IBOutlet weak var resultLabel: UILabel!
     
     let newlyCoinedWordList =
@@ -30,13 +33,14 @@ class ViewController: UIViewController {
          "군싹":"군침이 싹도네의 줄임말로 뽀로로 루피짤과 세트로 유명해졌음"
         ]
     
+    var idx = 0
+    var keywordList = ["좋댓구알", "스불재", "억텐", "쫌쫌따리"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         designSearchTextField(searchTextField)
         designSearchButton(searchButton)
-        
-        let keywordList = ["윰차", "실매", "만만잘부", "꾸안꾸"]
         designKeywordButton(keywordButtons, title: keywordList)
         
     }
@@ -74,7 +78,18 @@ class ViewController: UIViewController {
         } else {
             label.text = "아직 앱에서 제공하지 않는 신조어입니다."
         }
+    }
+    
+    func changeKeywordList() {
+        guard let result = searchTextField.text else { return }
+        guard (newlyCoinedWordList[result] != nil) else { return }
         
+        if !keywordList.contains(result) {
+            keywordList[idx] = result
+            // idx = idx < 3 ? idx += 1 : 0
+            if idx < 3 { idx += 1 } else { idx = 0 }
+        }
+        designKeywordButton(keywordButtons, title: keywordList)
     }
     
     @IBAction func tabGestureClicked(_ sender: UITapGestureRecognizer) {
@@ -83,12 +98,20 @@ class ViewController: UIViewController {
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         printResultInLabel(resultLabel)
+        changeKeywordList()
         view.endEditing(true)
     }
     
     @IBAction func searchTextFieldReturnClicked(_ sender: UITextField) {
         printResultInLabel(resultLabel)
+        changeKeywordList()
         view.endEditing(true)
+    }
+    
+    @IBAction func keywordButtonClicked(_ sender: UIButton) {
+        guard let res = sender.currentTitle else { return }
+        searchTextField.text = res
+        printResultInLabel(resultLabel)
     }
     
 }
