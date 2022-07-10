@@ -24,6 +24,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="324" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchTextFieldReturnClicked:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ZEO-zm-TQm"/>
+                                            <action selector="searchTextFieldReturnClicked:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="jko-6M-JDL"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsn-h2-NpK">
                                         <rect key="frame" x="324" y="0.0" width="50" height="50"/>
@@ -35,6 +39,9 @@
                                         <state key="normal" image="magnifyingglass" catalog="system">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="searchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ywX-wG-wXS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,11 +58,6 @@
                                     <constraint firstAttribute="bottom" secondItem="GcA-BY-R5c" secondAttribute="bottom" id="xeK-l6-uv9"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tLY-QE-VuY">
-                                <rect key="frame" x="191" y="431" width="32" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="D82-ZT-BmD">
                                 <rect key="frame" x="5" y="298" width="404" height="300"/>
                             </imageView>
@@ -79,31 +81,57 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmM-WD-iR8">
+                                <rect key="frame" x="30" y="448" width="354" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="TmM-WD-iR8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3su-IU-v2h"/>
                             <constraint firstItem="mVm-2t-xBy" firstAttribute="top" secondItem="hTD-6q-e0s" secondAttribute="bottom" constant="10" id="AD2-cP-SnY"/>
                             <constraint firstItem="D82-ZT-BmD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="BBT-EP-0UN"/>
                             <constraint firstItem="D82-ZT-BmD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Eyr-oJ-mQc"/>
                             <constraint firstItem="SZP-4P-fpQ" firstAttribute="top" secondItem="hTD-6q-e0s" secondAttribute="bottom" constant="10" id="FoJ-Oj-8zg"/>
-                            <constraint firstItem="tLY-QE-VuY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="L3o-gT-oDG"/>
                             <constraint firstItem="hTD-6q-e0s" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="QH1-Fj-IrH"/>
                             <constraint firstItem="hTD-6q-e0s" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="RSE-ca-TS0"/>
+                            <constraint firstAttribute="trailing" secondItem="TmM-WD-iR8" secondAttribute="trailing" constant="30" id="YJY-Zu-nDQ"/>
                             <constraint firstItem="pgA-AV-2n7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YPD-Ar-V6u"/>
-                            <constraint firstItem="tLY-QE-VuY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bjz-gy-Sf9"/>
+                            <constraint firstItem="TmM-WD-iR8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="cw5-46-cJ8"/>
                             <constraint firstItem="MR8-2U-0GG" firstAttribute="leading" secondItem="mVm-2t-xBy" secondAttribute="trailing" constant="3" id="ddc-wy-jdA"/>
                             <constraint firstItem="MR8-2U-0GG" firstAttribute="top" secondItem="hTD-6q-e0s" secondAttribute="bottom" constant="10" id="eeW-CD-djQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hTD-6q-e0s" secondAttribute="trailing" constant="20" id="gqS-cs-1EL"/>
                             <constraint firstItem="D82-ZT-BmD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hiP-pR-q9C"/>
                             <constraint firstItem="mVm-2t-xBy" firstAttribute="leading" secondItem="SZP-4P-fpQ" secondAttribute="trailing" constant="3" id="ib1-7n-P6I"/>
+                            <constraint firstItem="TmM-WD-iR8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="lse-Jb-7gC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D82-ZT-BmD" secondAttribute="trailing" constant="5" id="pUa-vF-qYe"/>
                             <constraint firstItem="SZP-4P-fpQ" firstAttribute="leading" secondItem="pgA-AV-2n7" secondAttribute="trailing" constant="3" id="q8A-II-56u"/>
                             <constraint firstItem="pgA-AV-2n7" firstAttribute="top" secondItem="hTD-6q-e0s" secondAttribute="bottom" constant="10" id="wex-lk-QAQ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="reD-Lt-x4r" appends="YES" id="A4L-P8-Vgh"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="TmM-WD-iR8" id="vt2-gu-xWI"/>
+                        <outlet property="searchButton" destination="rsn-h2-NpK" id="hYH-Un-rGZ"/>
+                        <outlet property="searchTextField" destination="GcA-BY-R5c" id="hrH-jU-CVK"/>
+                        <outletCollection property="keywordButtons" destination="pgA-AV-2n7" collectionClass="NSMutableArray" id="CFH-EH-G04"/>
+                        <outletCollection property="keywordButtons" destination="SZP-4P-fpQ" collectionClass="NSMutableArray" id="ER3-cm-fgg"/>
+                        <outletCollection property="keywordButtons" destination="mVm-2t-xBy" collectionClass="NSMutableArray" id="oeI-ej-GQp"/>
+                        <outletCollection property="keywordButtons" destination="MR8-2U-0GG" collectionClass="NSMutableArray" id="BZI-cI-lGs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="reD-Lt-x4r">
+                    <connections>
+                        <action selector="tabGestureClicked:" destination="BYZ-38-t0r" id="C6r-oo-ep4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
