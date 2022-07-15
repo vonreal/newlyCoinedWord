@@ -129,7 +129,6 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="keywordButton1" destination="pgA-AV-2n7" id="rlJ-FA-UIb"/>
                         <outlet property="resultLabel" destination="TmM-WD-iR8" id="vt2-gu-xWI"/>
                         <outlet property="searchButton" destination="rsn-h2-NpK" id="hYH-Un-rGZ"/>
                         <outlet property="searchTextField" destination="GcA-BY-R5c" id="hrH-jU-CVK"/>
@@ -146,7 +145,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
